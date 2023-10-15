@@ -3,11 +3,12 @@ import React from "react";
 const BookShelf = ({book, handleUpdate }) => {
     const handleUpdateShelf = (e) => {
         const value = e.target.value;
+        book.shelf = value;
         handleUpdate(book, value);
     };
     return (
         <select value = {book.shelf ? book.shelf : "none"} onChange = {handleUpdateShelf}>
-          <option value="none" disabled>
+          <option disabled>
             Move to...
           </option>
           <option value="currentlyReading">
